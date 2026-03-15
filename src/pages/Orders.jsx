@@ -12,7 +12,7 @@ const Orders = () => {
         const fetchOrders = async () => {
             try {
                 // In a real app, you would fetch from your backend
-                // Constance response = await axios.get('/api/orders/myorders');
+                // const response = await axios.get('https://food-delivery-backend-1-rn4y.onrender.com/api/orders/myorders');
                 // setOrders(response.data);
 
                 // Mock data for demonstration until backend is fully connected
