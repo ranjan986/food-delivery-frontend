@@ -39,7 +39,7 @@ const AdminDashboard = () => {
 
     const fetchRestaurants = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/restaurants');
+            const response = await axios.get('https://food-delivery-backend-1-rn4y.onrender.com/api/restaurants');
             setRestaurants(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error fetching restaurants:', error);
@@ -65,10 +65,10 @@ const AdminDashboard = () => {
                 },
             };
 
-            const { data } = await axios.post('http://localhost:5000/api/upload', formDataUpload, config);
+            const { data } = await axios.post('https://food-delivery-backend-1-rn4y.onrender.com/api/upload', formDataUpload, config);
 
             // Construct full URL including backend server
-            const fullUrl = `http://localhost:5000${data.image}`;
+            const fullUrl = `https://food-delivery-backend-1-rn4y.onrender.com${data.image}`;
             setFormData(prev => ({ ...prev, [field]: fullUrl }));
             setUploading(false);
             toast.success('Image uploaded!');
@@ -101,10 +101,10 @@ const AdminDashboard = () => {
             };
 
             if (isEditing) {
-                await axios.put(`http://localhost:5000/api/restaurants/${editId}`, payload, config);
+                await axios.put(`https://food-delivery-backend-1-rn4y.onrender.com/api/restaurants/${editId}`, payload, config);
                 toast.success('Restaurant Updated Successfully');
             } else {
-                await axios.post('http://localhost:5000/api/restaurants', payload, config);
+                await axios.post('https://food-delivery-backend-1-rn4y.onrender.com/api/restaurants', payload, config);
                 toast.success('Restaurant Added Successfully');
             }
 
@@ -171,7 +171,7 @@ const AdminDashboard = () => {
                     Authorization: `Bearer ${token}`
                 }
             };
-            await axios.delete(`http://localhost:5000/api/restaurants/${id}`, config);
+            await axios.delete(`https://food-delivery-backend-1-rn4y.onrender.com/api/restaurants/${id}`, config);
             toast.success('Restaurant Deleted!');
             fetchRestaurants();
         } catch (error) {

@@ -43,7 +43,7 @@ const AddMenu = () => {
                 ratingCount: '100+'
             };
 
-            await axios.post(`http://localhost:5000/api/restaurants/${id}/menu`, dataToSend, config);
+            await axios.post(`https://food-delivery-backend-1-rn4y.onrender.com/api/restaurants/${id}/menu`, dataToSend, config);
             toast.success('Menu Item Added Successfully');
             navigate('/admin');
         } catch (error) {

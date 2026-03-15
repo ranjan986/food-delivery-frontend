@@ -138,7 +138,7 @@ const Checkout = () => {
                 }
             };
 
-            const result = await axios.post('http://localhost:5000/api/payment/create-order', {
+            const result = await axios.post('https://food-delivery-backend-1-rn4y.onrender.com/api/payment/create-order', {
                 amount: grandTotal
             }, config);
 
@@ -163,7 +163,7 @@ const Checkout = () => {
                         razorpay_signature: response.razorpay_signature,
                     };
 
-                    const verifyResult = await axios.post('http://localhost:5000/api/payment/verify-payment', data, config);
+                    const verifyResult = await axios.post('https://food-delivery-backend-1-rn4y.onrender.com/api/payment/verify-payment', data, config);
 
                     if (verifyResult.data.message === 'Payment verified successfully') {
                         // Save Order

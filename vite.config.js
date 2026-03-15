@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://food-delivery-backend-1-rn4y.onrender.com',
         changeOrigin: true,
         secure: false,
       },
